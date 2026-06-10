@@ -2,6 +2,43 @@
 
 Текущая версия — только фронт: данные хранятся в браузере (localStorage). Каждое устройство/браузер видит свои данные.
 
+## GitHub Pages
+
+Проект подготовлен для публикации на GitHub Pages по адресу:
+
+```text
+https://messawaited.github.io/Sosh3/
+```
+
+В корне есть workflow `.github/workflows/deploy-pages.yml`. Он автоматически:
+
+- устанавливает зависимости через `npm ci`;
+- собирает проект командой `npm run build`;
+- задаёт базовый путь `VITE_BASE_PATH=/Sosh3/`;
+- копирует `dist/index.html` в `dist/404.html`, чтобы прямые ссылки React Router не ломались при обновлении страницы;
+- публикует папку `dist` на GitHub Pages.
+
+### Включение GitHub Pages
+
+1. Откройте репозиторий `https://github.com/MessAwaited/Sosh3`.
+2. Перейдите в **Settings** → **Pages**.
+3. В поле **Source** выберите **GitHub Actions**.
+4. Откройте вкладку **Actions**.
+5. Запустите workflow **Deploy to GitHub Pages** вручную или сделайте push в ветку `main`.
+6. После успешного выполнения workflow сайт будет доступен по адресу `https://messawaited.github.io/Sosh3/`.
+
+### Локальная проверка GitHub Pages-сборки
+
+В PowerShell:
+
+```powershell
+$env:VITE_BASE_PATH='/Sosh3/'
+npm run build
+Copy-Item dist/index.html dist/404.html
+```
+
+После этого содержимое `dist/` соответствует структуре, которую публикует GitHub Pages.
+
 ## Render
 
 Проект подготовлен для публикации как Static Site на Render. В корне есть `render.yaml`, который задаёт:
@@ -33,7 +70,7 @@
    - **Action**: `Rewrite`
 6. Запустите деплой.
 
-## Локальная проверка перед Render
+## Локальная проверка перед Render или Vercel
 
 ```bash
 npm ci

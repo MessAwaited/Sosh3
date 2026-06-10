@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
 import { buildRating } from '../data/rating';
+import { publicAsset } from '../utils/assets';
 import styles from './StudentRatingPage.module.css';
 
 const medalByPlace: Record<number, string> = {
-  1: '/rating/medal-1.png',
-  2: '/rating/medal-2.png',
-  3: '/rating/medal-3.png',
+  1: publicAsset('/rating/medal-1.png'),
+  2: publicAsset('/rating/medal-2.png'),
+  3: publicAsset('/rating/medal-3.png'),
 };
+
+const avatarImage = publicAsset('/rating/avatar.png');
 
 function PlaceMark({ place }: { place: number }) {
   const medal = medalByPlace[place];
@@ -42,7 +45,7 @@ export function StudentRatingPage() {
             >
               <div className={styles.person}>
                 <span className={styles.avatarWrap}>
-                  <img src="/rating/avatar.png" alt="" className={styles.avatar} />
+                  <img src={avatarImage} alt="" className={styles.avatar} />
                 </span>
                 <span className={styles.name}>{student.name}</span>
               </div>
@@ -75,7 +78,7 @@ export function StudentRatingPage() {
               >
                 <div className={styles.person}>
                   <span className={styles.avatarWrap}>
-                    <img src="/rating/avatar.png" alt="" className={styles.avatar} />
+                    <img src={avatarImage} alt="" className={styles.avatar} />
                   </span>
                   <span className={styles.name}>{student.name}</span>
                 </div>

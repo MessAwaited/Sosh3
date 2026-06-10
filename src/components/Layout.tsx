@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { LogOut, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
+import { publicAsset } from '../utils/assets';
 import styles from './Layout.module.css';
 
 export function Layout() {
@@ -47,7 +48,7 @@ export function Layout() {
       >
         <div className={styles.inner}>
           <NavLink to={user?.role === 'student' ? '/student' : '/teacher'} className={styles.logo}>
-            <img src="/tochka-rosta-full-logo.png" alt="Точка роста" className={styles.logoImage} />
+            <img src={publicAsset('/tochka-rosta-full-logo.png')} alt="Точка роста" className={styles.logoImage} />
           </NavLink>
 
           <nav className={styles.nav}>

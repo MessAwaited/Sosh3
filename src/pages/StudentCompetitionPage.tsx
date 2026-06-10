@@ -10,6 +10,7 @@ import {
   submitCompetitionApplication,
   submitCompetitionZip,
 } from '../store/registry';
+import { publicAsset } from '../utils/assets';
 import styles from './StudentCompetitionPage.module.css';
 
 function formatBytes(bytes: number): string {
@@ -79,7 +80,7 @@ export function StudentCompetitionPage() {
         animate={{ opacity: 1, y: 0 }}
       >
         <div className={styles.heroRow}>
-          <div className={styles.poster}><img src="/competition-poster.png" alt="Постер соревнования" /></div>
+          <div className={styles.poster}><img src={publicAsset('/competition-poster.png')} alt="Постер соревнования" /></div>
           <div className={styles.info}>
             <h2>{competition.title}</h2>
             <ul className={styles.metaList}>

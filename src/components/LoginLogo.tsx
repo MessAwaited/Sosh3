@@ -1,3 +1,4 @@
+import { publicAsset } from '../utils/assets';
 import styles from './LoginLogo.module.css';
 
 /** Логотип в стиле Точка роста + Национальные проекты России (Образование) */
@@ -6,7 +7,7 @@ export function LoginLogo() {
     <div className={styles.wrap}>
       <div className={styles.tochkaRosta}>
         <img
-          src="/tochka-rosta-full-logo.png"
+          src={publicAsset('/tochka-rosta-full-logo.png')}
           alt="Точка роста"
           className={styles.fullLogo}
         />

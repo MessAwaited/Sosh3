@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
+import { publicAsset } from '../utils/assets';
 import styles from './Header.module.css';
 
 export function Header() {
@@ -17,7 +18,7 @@ export function Header() {
             whileHover={{ rotate: 10, scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 400, damping: 10 }}
           >
-            <img src="/tochka-growth-mark.png" alt="" className={styles.logoIconImage} />
+            <img src={publicAsset('/tochka-growth-mark.png')} alt="" className={styles.logoIconImage} />
           </motion.span>
           <div>
             <span className={styles.logoTitle}>Спортивное программирование</span>

@@ -11,6 +11,10 @@ import { TeacherDashboard } from './pages/TeacherDashboard';
 import { StudentCompetitionPage } from './pages/StudentCompetitionPage';
 import { StudentRatingPage } from './pages/StudentRatingPage';
 
+const routerBasename = import.meta.env.BASE_URL === '/'
+  ? undefined
+  : import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function ProtectedStudent() {
   const { user } = useAuth();
   if (!user) return <Navigate to="/login" replace />;
@@ -34,7 +38,7 @@ function RedirectFromRoot() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <ThemeProvider>
         <AuthProvider>
           <ProgressProvider>

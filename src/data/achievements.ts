@@ -1,4 +1,6 @@
-﻿export interface Achievement {
+import { publicAsset } from '../utils/assets';
+
+export interface Achievement {
   id: string;
   title: string;
   description: string;
@@ -55,7 +57,7 @@ export function buildAchievements(params: BuildAchievementsParams): Achievement[
       title: 'Марафонец',
       description: 'Занимайтесь 7 дней подряд',
       icon: 'calendar',
-      iconImage: '/achievements/marathoner.png',
+      iconImage: publicAsset('/achievements/marathoner.png'),
       iconScale: 1.45,
       unlocked: streakDays >= 7,
       progress: Math.min(streakDays, 7),
@@ -66,7 +68,7 @@ export function buildAchievements(params: BuildAchievementsParams): Achievement[
       title: 'Скоростной режим',
       description: 'Решите задачу менее чем за 5 минут',
       icon: 'zap',
-      iconImage: '/achievements/speedometer.png',
+      iconImage: publicAsset('/achievements/speedometer.png'),
       unlocked: hasSpeedRun,
     },
     {
@@ -74,7 +76,7 @@ export function buildAchievements(params: BuildAchievementsParams): Achievement[
       title: 'Кладовщик',
       description: 'Пройдите урок «Сортировки»',
       icon: 'cpu',
-      iconImage: '/achievements/warehouse.png',
+      iconImage: publicAsset('/achievements/warehouse.png'),
       unlocked: hasCompletedSortingLesson,
       progress: hasCompletedSortingLesson ? 1 : 0,
       total: 1,
@@ -84,7 +86,7 @@ export function buildAchievements(params: BuildAchievementsParams): Achievement[
       title: 'Кандидат',
       description: 'Поучаствуйте в соревновании',
       icon: 'trophy',
-      iconImage: '/achievements/candidate.png',
+      iconImage: publicAsset('/achievements/candidate.png'),
       unlocked: hasCompetitionParticipation,
       progress: hasCompetitionParticipation ? 1 : 0,
       total: 1,
@@ -94,7 +96,7 @@ export function buildAchievements(params: BuildAchievementsParams): Achievement[
       title: 'Величайший',
       description: 'Попасть в топ 5 рейтинга',
       icon: 'network',
-      iconImage: '/achievements/greatest.png',
+      iconImage: publicAsset('/achievements/greatest.png'),
       unlocked: isInTopFive,
       progress: isInTopFive ? 1 : 0,
       total: 1,

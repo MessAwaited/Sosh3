@@ -20,6 +20,7 @@ import {
   saveCompetitionReview,
 } from '../store/registry';
 import { useAuth } from '../context/AuthContext';
+import { publicAsset } from '../utils/assets';
 import styles from './TeacherCompetitionPage.module.css';
 
 type CompetitionTeacherTab = 'applications' | 'participants';
@@ -143,7 +144,7 @@ export function TeacherCompetitionPage() {
     <div className={styles.page}>
       <motion.section className={styles.card} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
         <div className={styles.heroRow}>
-          <div className={styles.poster}><img src="/competition-poster.png" alt="Постер соревнования" /></div>
+          <div className={styles.poster}><img src={publicAsset('/competition-poster.png')} alt="Постер соревнования" /></div>
           <div className={styles.info}>
             <h2>{competition.title}</h2>
             <ul className={styles.metaList}>
