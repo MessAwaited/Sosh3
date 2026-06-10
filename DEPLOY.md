@@ -27,6 +27,8 @@ https://messawaited.github.io/Sosh3/
 5. Запустите workflow **Deploy to GitHub Pages** вручную или сделайте push в ветку `main`.
 6. После успешного выполнения workflow сайт будет доступен по адресу `https://messawaited.github.io/Sosh3/`.
 
+Если workflow падает с ошибкой `Get Pages site failed` или `HttpError: Not Found`, значит GitHub Pages ещё не включён для репозитория. Откройте **Settings** → **Pages**, выберите **Source: GitHub Actions**, сохраните настройку и перезапустите workflow кнопкой **Re-run jobs**.
+
 ### Локальная проверка GitHub Pages-сборки
 
 В PowerShell:
