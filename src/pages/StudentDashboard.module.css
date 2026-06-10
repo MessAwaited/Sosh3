@@ -1,0 +1,191 @@
+.page {
+  padding-bottom: 3rem;
+}
+
+.hero {
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.heroSub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.progressSection {
+  margin-bottom: 2rem;
+}
+
+.theoryCta {
+  margin-top: 1rem;
+}
+
+.theoryLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--accent-light) 0%, rgba(227, 6, 17, 0.04) 100%);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-lg);
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.theoryLink:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.theoryLink svg:first-child {
+  flex-shrink: 0;
+}
+
+.progressCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.progressHead {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.progressHead h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.progressIcon {
+  color: var(--accent);
+}
+
+.streak {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.streak svg {
+  color: var(--accent);
+}
+
+.progressStats {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.percent {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.lessons {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.track {
+  height: 8px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.trackFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+}
+
+.milestones {
+  position: relative;
+  height: 1rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.milestone {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.milestoneStart {
+  transform: translateX(0);
+}
+
+.milestoneEnd {
+  transform: translateX(-100%);
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionHead {
+  margin-bottom: 1.25rem;
+}
+
+.sectionHead h2 {
+  font-size: 1.42rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.sectionIcon {
+  color: var(--accent);
+}
+
+.sectionHead p {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.lessonGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievementGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.illustrations {
+  margin-top: 2rem;
+}
+
+.illustrationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}

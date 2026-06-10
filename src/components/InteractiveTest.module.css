@@ -1,0 +1,138 @@
+.wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.progress {
+  margin-bottom: 1.25rem;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.progressText {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+}
+
+.questionBlock {
+  padding: 0.25rem 0;
+}
+
+.questionText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.option:hover:not(.optionCorrect):not(.optionWrong) {
+  border-color: var(--border);
+  background: var(--bg-card-hover);
+}
+
+.optionSelected {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.optionCorrect {
+  border-color: #16a34a;
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.optionWrong {
+  border-color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.optionText {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.optionIcon {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.optionIconWrong {
+  color: #dc2626;
+  flex-shrink: 0;
+}
+
+.explanation {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--accent);
+}
+
+.explanation strong {
+  color: var(--text-primary);
+}
+
+.nextBtn {
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: white;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nextBtn:hover {
+  background: var(--accent-hover);
+}

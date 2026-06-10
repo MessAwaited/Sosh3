@@ -1,0 +1,104 @@
+.badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge.unlocked {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 1px var(--accent-light);
+}
+
+.badge.unlocked .iconWrap {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.badge.locked .iconWrap {
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.iconImage {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.iconWrap svg {
+  width: 26px;
+  height: 26px;
+}
+
+.badge.unlocked .iconImage {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(96%) saturate(4685%) hue-rotate(350deg) brightness(92%) contrast(105%);
+}
+
+.badge.locked .iconImage {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(7%) saturate(216%) hue-rotate(182deg) brightness(91%) contrast(88%);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.desc {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.progressWrap {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+}
+
+.progressLabel {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  min-width: 2.5rem;
+}

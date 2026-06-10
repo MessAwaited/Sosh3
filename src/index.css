@@ -1,0 +1,122 @@
+:root,
+[data-theme="light"] {
+  /* Точка роста: светлая тема */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafafa;
+  --bg-header: rgba(255, 255, 255, 0.95);
+
+  --text-primary: #2c2c2e;
+  --text-secondary: #5c5c5e;
+  --text-muted: #8e8e93;
+
+  --accent: #e30611;
+  --accent-hover: #c40510;
+  --accent-light: rgba(227, 6, 17, 0.08);
+  --accent-border: rgba(227, 6, 17, 0.35);
+  --success: #16a34a;
+  --success-hover: #15803d;
+
+  --border: #e5e5ea;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.1);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.35s;
+  --duration-slow: 0.5s;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1c;
+  --bg-secondary: #252528;
+  --bg-card: #252528;
+  --bg-card-hover: #2e2e32;
+  --bg-header: rgba(26, 26, 28, 0.95);
+
+  --text-primary: #f5f5f7;
+  --text-secondary: #b8b8bd;
+  --text-muted: #8e8e93;
+
+  --accent: #ff3b42;
+  --accent-hover: #ff5c62;
+  --accent-light: rgba(255, 59, 66, 0.15);
+  --accent-border: rgba(255, 59, 66, 0.4);
+  --success: #22c55e;
+  --success-hover: #16a34a;
+
+  --border: #3a3a3e;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h3 { font-size: 1.125rem; }
+
+p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Геометрический паттерн — ромбы справа (как на бренде Точка роста) */
+.rhombus-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0L20 10L10 20L0 10Z' fill='none' stroke='%23e30611' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E");
+}

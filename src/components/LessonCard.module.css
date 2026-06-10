@@ -1,0 +1,258 @@
+.card {
+  --lesson-progress-color: #d97706;
+  --lesson-progress-badge: #facc15;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.card:not(.locked):hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-md);
+}
+
+.card.locked {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.iconWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.completedBadge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--success);
+  color: white;
+  border-radius: 50%;
+  border: 2px solid var(--bg-card);
+}
+
+.inProgressBadge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--lesson-progress-badge);
+  color: white;
+  border-radius: 50%;
+  border: 2px solid var(--bg-card);
+}
+
+.content {
+  min-width: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.difficulty {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+  min-width: 168px;
+}
+
+.lockedLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ctaStart {
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.ctaRepeat {
+  gap: 0.35rem;
+  min-height: 34px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.resultStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(58px, 1fr));
+  gap: 0.3rem;
+  min-width: 168px;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, var(--accent-light), rgba(227, 6, 17, 0.03));
+}
+
+.resultStat,
+.resultGrade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  line-height: 1.15;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.resultStat strong {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.resultGrade {
+  grid-column: 1 / -1;
+  min-height: 36px;
+  color: var(--text-primary);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.gradeValue {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.grade2 {
+  color: #111827;
+}
+
+.grade3 {
+  color: #dc2626;
+}
+
+.grade4 {
+  color: #d97706;
+}
+
+.grade5 {
+  color: var(--success);
+}
+
+.cta:hover {
+  color: var(--accent-hover);
+}
+
+.cta svg {
+  flex-shrink: 0;
+}
+
+.ctaContinue {
+  color: var(--lesson-progress-color);
+}
+
+.ctaContinue:hover {
+  color: #b45309;
+}
+
+@media (max-width: 640px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .iconWrap {
+    justify-self: start;
+  }
+
+  .actions {
+    justify-self: start;
+    align-items: flex-start;
+  }
+}

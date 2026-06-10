@@ -1,0 +1,348 @@
+.wrap {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-header);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80px;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1.75rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  flex: 0 0 230px;
+}
+
+.logoImage {
+  height: 53px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  align-self: stretch;
+  min-width: 0;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.navLink,
+.navActive {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 100%;
+  padding: 0 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  border-radius: 0;
+  background: transparent;
+  overflow: hidden;
+  transition:
+    transform 0.14s ease;
+}
+
+.navFill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--accent-light);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navText {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  transition: color 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navLink::before,
+.navActive::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  width: 1px;
+  height: calc(100% - 32px);
+  background: var(--border);
+  transition:
+    top 0.2s ease,
+    height 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.navLink::before,
+.navActive::before {
+  left: 0;
+}
+
+.navLink:first-child::before,
+.navActive:first-child::before {
+  display: none;
+}
+
+.navLink:hover {
+  color: var(--accent);
+  background: transparent;
+}
+
+.navLink:active,
+.navActive:active {
+  color: var(--accent);
+  transform: translateY(1px);
+}
+
+.navLink:active .navFill,
+.navActive:active .navFill {
+  transform: scaleY(1);
+}
+
+.navLink:active::before,
+.navActive:active::before,
+.navLink:active + .navLink::before,
+.navLink:active + .navActive::before,
+.navActive:active + .navLink::before,
+.navActive:active + .navActive::before {
+  top: 0;
+  height: 100%;
+  background: var(--accent-border);
+}
+
+.navActive {
+  color: var(--accent);
+}
+
+.navActive .navFill {
+  transform: scaleY(1);
+}
+
+.navActive::before,
+.navActive + .navLink::before,
+.navActive + .navActive::before {
+  top: 0;
+  height: 100%;
+  background: color-mix(in srgb, var(--border) 70%, var(--accent) 30%);
+}
+
+.navActive:first-child {
+  border-top-left-radius: 16px;
+}
+
+.navActive:last-child {
+  border-top-right-radius: 16px;
+}
+
+.user {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.userName {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.userClass {
+  color: var(--text-muted);
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.themeBtn:hover {
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.logoutBtn:hover {
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.logoutSlot {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+}
+
+.logoutConfirm {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.35rem 0.45rem 0.35rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  transform-origin: left center;
+}
+
+.logoutConfirmText {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.logoutConfirmYes,
+.logoutConfirmNo {
+  min-width: 42px;
+  height: 34px;
+  padding: 0 0.6rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.logoutConfirmYes {
+  background: var(--accent);
+  color: white;
+}
+
+.logoutConfirmYes:hover {
+  background: var(--accent-hover);
+}
+
+.logoutConfirmNo {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+
+.logoutConfirmNo:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+@media (max-width: 980px) {
+  .inner {
+    min-height: auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    flex-basis: auto;
+  }
+
+  .logoImage {
+    height: 45px;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    border-top: 1px solid var(--border);
+  }
+
+  .navLink,
+  .navActive {
+    min-width: 135px;
+    height: 56px;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    gap: 0.75rem;
+  }
+
+  .logoImage {
+    height: 38px;
+  }
+
+  .user {
+    gap: 0.35rem;
+  }
+
+  .userName {
+    max-width: 145px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .userClass {
+    display: none;
+  }
+}

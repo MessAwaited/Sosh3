@@ -1,0 +1,12 @@
+.follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 6, 17, 0.35) 0%, rgba(227, 6, 17, 0.1) 70%, transparent 100%);
+  box-shadow: 0 0 20px rgba(227, 6, 17, 0.2);
+}
